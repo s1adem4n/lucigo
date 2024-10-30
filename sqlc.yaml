@@ -1,0 +1,12 @@
+version: "2"
+sql:
+  - engine: "sqlite"
+    queries: "pkg/db/sql/queries"
+    schema: "pkg/db/sql/schema.sql"
+    gen:
+      go:
+        package: "db"
+        out: "pkg/db"
+        emit_json_tags: true
+        json_tags_case_style: "camel"
+        emit_result_struct_pointers: true
